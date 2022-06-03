@@ -9,8 +9,8 @@ const Login = () => {
   const {addUser} = useFirestore();
   const [modoRegistro, setModoRegistro] = React.useState(true);
   const { user, setUser } = useContext(UserContext);
-  const [email, setEmail] = React.useState('aaa@hotmail.com')
-  const [password, setPassword] = React.useState('12345678')
+  const [email, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('')
   const [error, setError] = React.useState(null);
   const { userRegister, userLogin } = useContext(UserContext)
   const navigate = useNavigate()

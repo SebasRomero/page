@@ -9,7 +9,7 @@ export const useFirestore = () => {
     const [error, setError] = useState()
     const [loading, setLoading] = useState(false)
     useEffect(() => {
-        console.log('getData')
+        // console.log('getData')
         getData()
     }, [])
 
@@ -18,7 +18,7 @@ export const useFirestore = () => {
             setLoading(true)
             const querySnapshot = await getDocs(collection(db, "users", auth.currentUser.uid, "querys"))
             const dataDb = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-            console.log(dataDb)
+            // console.log(dataDb)
             setData(dataDb)
         } catch (error) {
             console.log(error)
@@ -49,7 +49,7 @@ export const useFirestore = () => {
 
     const addRequest = async (category, typeService, description, location, date) => {
         try {
-            console.log("uid ", auth.currentUser.uid)
+            // console.log("uid ", auth.currentUser.uid)
             setLoading(true)
             const newDoc = await addDoc(collection(db, "users", auth.currentUser.uid, "querys"), {
                 category: category,
@@ -59,7 +59,7 @@ export const useFirestore = () => {
                 date: date
             });
             setData([...data, newDoc])
-            console.log(newDoc.id)
+            // console.log(newDoc.id)
 
         } catch (error) {
             console.log(error)

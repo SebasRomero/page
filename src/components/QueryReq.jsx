@@ -16,7 +16,7 @@ const QueryReq = () => {
   }
 
   const handleClickEdit = async (item) => {
-    console.log("id:", item.id)
+    // console.log("id:", item.id)
     setEditing(true)
     setIte(item)
   }

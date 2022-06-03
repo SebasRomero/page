@@ -19,7 +19,7 @@ const CreateReq = (props) => {
     const { options, selectedIndex } = e.target;
     const change = options[selectedIndex].innerHTML;
     setCategory(change)
-    console.log(change);
+    // console.log(change);
   }
 
   const changeTypeService = (e) => {
@@ -27,18 +27,18 @@ const CreateReq = (props) => {
       const { options, selectedIndex } = e.target;
       const change = options[selectedIndex].innerHTML;
       setTypeService(change)
-      console.log(change);
+      // console.log(change);
     } else {
       if (category === "Mantenimiento muebles") {
         const { options, selectedIndex } = e.target;
         const change = options[selectedIndex].innerHTML;
         setTypeService(change)
-        console.log(change);
+        // console.log(change);
       } else {
         const { options, selectedIndex } = e.target;
         const change = options[selectedIndex].innerHTML;
         setTypeService(change)
-        console.log(change);
+        // console.log(change);
       }
     }
   }
@@ -56,13 +56,13 @@ const CreateReq = (props) => {
       console.log(error)
       return
     }
-    console.log(props.saving)
-    console.log(props.item.id)
-    console.log("datos nuevos a guardar: ", category, typeService,description, location, date)
-    if(props.saving){
-      await updateData(props.item.id, category, typeService,description, location, date)
-      if(props.edi){
-        console.log("::",props.edi(false))
+    // console.log(props.saving)
+    // console.log(props.item.id)
+    // console.log("datos nuevos a guardar: ", category, typeService,description, location, date)
+    if (props.saving) {
+      await updateData(props.item.id, category, typeService, description, location, date)
+      if (props.edi) {
+        console.log("::", props.edi(false))
       }
       return
     }
@@ -72,7 +72,7 @@ const CreateReq = (props) => {
   }
 
   const registerReq = async (e) => {
-    console.log("adding data")
+    // console.log("adding data")
     try {
       await addRequest(category, typeService, description, location, date);
     } catch (error) {
@@ -87,10 +87,10 @@ const CreateReq = (props) => {
   }
 
   const reset = (e) => {
-    if(props.edi){
-      console.log("::",props.edi(false))
+    if (props.edi) {
+      console.log("::", props.edi(false))
     }
-    console.log("reseteando solo")
+    // console.log("reseteando solo")
     setError(null)
     setCategory("Mantenimiento inmuebles")
     setDate("")
@@ -100,7 +100,7 @@ const CreateReq = (props) => {
   }
 
   const clickEdit = (item) => {
-    
+
   }
 
 
@@ -168,13 +168,13 @@ const CreateReq = (props) => {
               // <button className="btn btn-dark" type="button"
               // onClick={()=>clickEdit(props.item)}>Edit</button>
               <button className="btn btn-dark" type="submit"
-              onClick={()=>clickEdit(props.item)}>Edit</button>
-            ):(
+                onClick={() => clickEdit(props.item)}>Edit</button>
+            ) : (
 
               <button className="btn btn-dark" type="submit">Save</button>
             )
           }
-<button className="btn btn-dark mx-2" type="button" onClick={reset}>Cancel</button>
+          <button className="btn btn-dark mx-2" type="button" onClick={reset}>Cancel</button>
         </form>
       </div>
     </div>
