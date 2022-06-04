@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/final-desweb/static/css/main.e6c13ad2.css",
+    "main.js": "/final-desweb/static/js/main.f23d342d.js",
+    "index.html": "/final-desweb/index.html",
+    "main.e6c13ad2.css.map": "/final-desweb/static/css/main.e6c13ad2.css.map",
+    "main.f23d342d.js.map": "/final-desweb/static/js/main.f23d342d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.f23d342d.js"
+  ]
+}
